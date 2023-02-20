@@ -3,7 +3,7 @@
 <header class="header" id="header">
   <div class="header__container container flex">
     <picture>
-      <img src="../assets/img/logo.svg" alt="logo" />
+      <img src="assets/img/logo.svg" alt="logo" />
     </picture>
 
     <nav class="header__nav nav">
@@ -54,7 +54,7 @@
       <ul class="park__list flex">
         <li class="park__list-item flex" *ngFor="let car of carsData">
           <picture class="park__car">
-            <img class="park__car-img" src="../assets/img/{{car.image}}" alt="" />
+            <img class="park__car-img" src="{{car.image}}" alt="" />
           </picture>
           <p class="park__list-title">{{car.name}}</p>
           <ul class="park__caracter caracter flex">
@@ -149,20 +149,6 @@
               <p class="caracter__gear">Кол-во мест</p>
               <p class="caracter__desck">{{car.places}}</p>
             </li>
-            <li class="caracter-item flex">
-              <picture>
-                <img src="../assets/img/transmission.png" alt="" />
-              </picture>
-              <p class="caracter__gear">Коробка</p>
-              <p class="caracter__desck">{{car.transmission}}</p>
-            </li>
-            <li class="caracter-item flex">
-              <picture>
-                <img src="../assets/img/year.png" alt="" />
-              </picture>
-              <p class="caracter__gear">Год выпуска</p>
-              <p class="caracter__desck">{{car.year}}</p>
-            </li>
           </ul>
           <button
             class="park__btn btn"
@@ -234,7 +220,7 @@
 <footer class="footer" id="footer">
   <div class="footer__block container flex">
     <picture>
-      <img src="../assets/img/logo.svg" alt="logo" />
+      <img src="assets/img/logo.svg" alt="logo" />
     </picture>
 
     <p class="footer-captcha">Все права защищены</p>
