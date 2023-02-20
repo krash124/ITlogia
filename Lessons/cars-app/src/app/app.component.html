@@ -51,6 +51,10 @@
   <section class="park" id="park" #cars>
     <div class="park__container container">
       <h2 class="park__title">Наш автопарк</h2>
+      <div class="car-toggle">
+        <div [ngClass]="{active: category === 'sport'}" (click)="toggleCategory('sport')">Sport</div>
+        <div [ngClass]="{active: category === 'luxury'}" (click)="toggleCategory('luxury')">Luxury</div>
+      </div>
       <ul class="park__list flex">
         <li class="park__list-item flex" *ngFor="let car of carsData">
           <picture class="park__car">
@@ -175,7 +179,7 @@
       </p>
 
       <div class="reserv__form form">
-        <form class="form-block flex" action="" [formGroup]="reservForm">
+        <form class="form-block flex" action="" [formGroup]="priseForm">
           <input
             class="form-input"
             type="name"
@@ -205,7 +209,7 @@
             id="price-acton"
             type="button"
             (click)="onSubmit()"
-            [disabled]="!reservForm.valid"
+            [disabled]="!priseForm.valid"
           >
             Узнать цену
           </button>

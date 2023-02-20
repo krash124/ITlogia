@@ -1,6 +1,3 @@
-
-
-
 .container {
   max-width: 1250px;
   margin-left: auto;
@@ -87,7 +84,7 @@
   height: 100%;
   top: 0px;
   left: 12%;
-  background-image: url('../assets/img/background-hero.png');
+  background-image: url("../assets/img/background-hero.png");
   background-repeat: no-repeat;
   overflow: hidden;
   z-index: -1;
@@ -116,6 +113,38 @@
 }
 
 /* Care park */
+
+.car-toggle {
+  display: flex;
+  width: 194px;
+  border: 1px solid gray;
+  margin: 20px 0;
+}
+
+.car-toggle div {
+  padding: 20px;
+  background: white;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: black;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.car-toggle div.active {
+  background: #030305;
+  color: #ffffff;
+}
+
+.car .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
 .park {
   padding-top: 92px;
@@ -234,7 +263,7 @@
   height: 100%;
   top: 19%;
   left: 34%;
-  background-image: url('../assets/img/background-form.png');
+  background-image: url("../assets/img/background-form.png");
   background-repeat: no-repeat;
   overflow: hidden;
 }

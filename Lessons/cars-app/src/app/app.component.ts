@@ -9,7 +9,7 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
 
-  reservForm = this.fb.group({
+  priseForm = this.fb.group({
     name: ['', Validators.required],
     phone: ['', Validators.required],
     car: ['', Validators.required]
@@ -20,15 +20,21 @@ export class AppComponent {
   constructor(private fb: FormBuilder, private appService: AppService) {}
 
   ngOnInit() {
-    this.appService.getDate().subscribe(carsData => this.carsData = carsData);
+    this.appService.getData(this.category).subscribe(carsData => this.carsData = carsData);
   }
 
   goScroll(target: HTMLElement, car?: any) {
     target.scrollIntoView({behavior: 'smooth'});
     if (car) {
-      this.reservForm.patchValue({car: car.name})
+      this.priseForm.patchValue({car: car.name})
     }
   };
+
+  category: string = 'sport';
+  toggleCategory(category: string) {
+  this.category = category;
+  this.ngOnInit();
+}
 
   trans: any;
   @HostListener('document:mousemove', ['$event'])
@@ -37,20 +43,20 @@ export class AppComponent {
   }
     bgPos: any;
     @HostListener('document:scroll', ['$event'])
-    onscroll() {
+    onScroll() {
       this.bgPos = {backgroundPositionX: '0' + (0.3 * window.scrollY) + 'px'};
     }
   
 
   onSubmit() {
-    if (this.reservForm.valid) {
+    if (this.priseForm.valid) {
 
-    this.appService.sendQuery(this.reservForm.value)
+    this.appService.getData(this.priseForm.value)
       .subscribe(
         {
           next: (response: any) => {
             alert(response.message);
-            this.reservForm.reset();
+            this.priseForm.reset();
           },
           error: (response) => {
             alert(response.error.message);
