@@ -51,7 +51,7 @@ export class AppComponent {
   onSubmit() {
     if (this.priseForm.valid) {
 
-    this.appService.getData(this.priseForm.value)
+    this.appService.sendQuery(this.priseForm.value)
       .subscribe(
         {
           next: (response: any) => {

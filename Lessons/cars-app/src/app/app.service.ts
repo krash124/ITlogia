@@ -8,12 +8,12 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  getData(category: any) {
-    return this.http.get('https://testologia.site/intensive-data', {params: {category: category}});
+  sendQuery(data: any) {
+    return this.http.post('https://testologia.site/intensive-price', data)
   }
 
-  getDate() {
-    return this.http.get('https://testologia.site/intensive-data')
+  getData(category: any) {
+    return this.http.get('https://testologia.site/intensive-data', {params: {category: category}});
   }
 
 }
